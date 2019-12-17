@@ -11,9 +11,6 @@ from db_connection.connection_pool import ConnectionPool
 
 
 class ProductDao():
-    def __init__(self):
-        pass
-
     def __do_query(self, query=None, arg=None):
         try:
             conn = ConnectionPool.get_instance().get_connection()

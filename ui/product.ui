@@ -6,89 +6,81 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>680</height>
+    <width>358</width>
+    <height>335</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>product</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_3">
+  <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <layout class="QGridLayout" name="gridLayout_2">
+    <layout class="QFormLayout" name="formLayout_2">
      <item row="0" column="0">
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <layout class="QFormLayout" name="formLayout">
-         <item row="0" column="0">
-          <widget class="QLabel" name="lbl_code">
-           <property name="text">
-            <string>code</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="le_code"/>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="lbl_name">
-           <property name="text">
-            <string>name</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="le_name"/>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QPushButton" name="btn_insert">
-           <property name="text">
-            <string>추가</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_update">
-           <property name="text">
-            <string>수정</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_delete">
-           <property name="text">
-            <string>삭제</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_init">
-           <property name="text">
-            <string>초기화</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
+      <widget class="QLabel" name="lbl_code">
+       <property name="text">
+        <string>code</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="le_code"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="le_name"/>
      </item>
      <item row="1" column="0">
-      <widget class="QTableWidget" name="tableWidget">
-       <property name="rowCount">
-        <number>0</number>
+      <widget class="QLabel" name="lbl_name">
+       <property name="text">
+        <string>name</string>
        </property>
-       <property name="columnCount">
-        <number>2</number>
-       </property>
-       <column/>
-       <column/>
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="btn_insert">
+       <property name="text">
+        <string>추가( &amp;a )</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_update">
+       <property name="text">
+        <string>수정( &amp;u )</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_delete">
+       <property name="text">
+        <string>삭제 ( &amp;d )</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_init">
+       <property name="text">
+        <string>초기화 ( &amp;i )</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTableWidget" name="pro_table">
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>2</number>
+     </property>
+     <column/>
+     <column/>
+    </widget>
    </item>
   </layout>
  </widget>

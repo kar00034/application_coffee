@@ -1,10 +1,20 @@
 import inspect
 from abc import ABCMeta, abstractmethod
 
+from PyQt5.QtWidgets import QAbstractItemView, QHeaderView
 from mysql.connector import Error
 
 from db_connection.connection_pool import ConnectionPool
 
+def create_table(table=None, data=None):
+    table.setHorizontalHeaderLabels(data)
+    # row단위선택
+    table.setSelectionBehavior(QAbstractItemView.SelectRows)
+    # 수정불가
+    table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+    # 균일 간격 재배치
+    table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+    return table
 
 class Dao(metaclass=ABCMeta):
     def __init__(self):
@@ -31,8 +41,8 @@ class Dao(metaclass=ABCMeta):
         try:
             conn = self.connection_Pool.get_connection()
             cursor = conn.cursor()
-            if kwargs['p_args'] is not None:
-                cursor.execute(kwargs['query'], kwargs['kargs'])
+            if kwargs['kwargs'] is not None:
+                cursor.execute(kwargs['query'], kwargs['kwargs'])
             else:
                 cursor.execute(kwargs['query'])
             conn.commit()
