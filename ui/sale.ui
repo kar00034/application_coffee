@@ -66,7 +66,26 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="le_sale_no"/>
+        <widget class="QLineEdit" name="le_sale_no">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="dragEnabled">
+          <bool>false</bool>
+         </property>
+         <property name="readOnly">
+          <bool>false</bool>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -81,6 +100,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btn_sale_update">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>수정 ( &amp;u )</string>
          </property>

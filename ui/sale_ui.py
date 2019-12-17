@@ -64,24 +64,6 @@ class Sale_form(QWidget):
 
         return item_no, item_code, item_price, item_salecnt, item_margin
 
-    def sale_get_item_form_le(self):
-        no = self.ui.sale_table.rowCount()
-        code = self.ui.le_sale_code.text()
-        price = self.ui.le_sale_price.text()
-        marginRate = self.ui.le_sale_marginRate.text()
-        salecnt = self.ui.le_sale_salecnt.text()
-
-        return self.sale_create_item(no,code, price, salecnt, marginRate)
-
-    def sale_get_item_form_le2(self):
-        no = self.ui.sale_table.rowCount()
-        code = self.ui.le_sale_code.text()
-        price = self.ui.le_sale_price.text()
-        salecnt = self.ui.le_sale_salecnt.text()
-        marginRate = self.ui.le_sale_marginRate.text()
-
-        return self.sale_create_item(no, code, price, salecnt, marginRate)
-
     def sale_del_item(self):
         st = SaleDao()
         selectionIdxs = self.ui.sale_table.selectedIndexes()[0]
@@ -91,7 +73,6 @@ class Sale_form(QWidget):
 
     def sale_add_item(self):
         st = SaleDao()
-        print(self.ui.le_sale_marginRate.text())
         st.insert_item(self.ui.le_sale_code.text(), self.ui.le_sale_price.text(), self.ui.le_sale_salecnt.text(),
                        self.ui.le_sale_marginRate.text())
         self.init_item()
@@ -103,10 +84,12 @@ class Sale_form(QWidget):
 
         self.init_item()
         self.sale_load_data(st.select_item())
+        self.ui.btn_sale_update.setEnabled(False)
+        self.ui.btn_sale_add.setEnabled(True)
+        self.ui.btn_sale_delete.setEnabled(True)
+        self.ui.btn_sale_init.setEnabled(True)
 
     def init_item(self):
-        self.ui.le_code.clear()
-        self.ui.le_name.clear()
         self.ui.le_sale_code.clear()
         self.ui.le_sale_price.clear()
         self.ui.le_sale_salecnt.clear()
@@ -117,18 +100,19 @@ class Sale_form(QWidget):
     def set_context_menu(self, tv):
         tv.setContextMenuPolicy(Qt.ActionsContextMenu)
         update_action = QAction('수정', tv)
-        delete_action = QAction('삭제', tv)
         tv.addAction(update_action)
-        tv.addAction(delete_action)
         update_action.triggered.connect(self.__update)
-        # delete_action.triggered.connect(self.__delete)
 
+    #업데이트 비활성화
     def __update(self):
-        # no,code, price, salecnt, marginRate = self.sale_get_item_form_le()
-        # nextIdx = self.ui.sale_table.selectedIndexes()[0]
-        # print(self.ui.sale_table.Item(nextIdx, 0, no),
-        #     self.ui.sale_table.Item(nextIdx, 1, code),
-        #     self.ui.sale_table.Item(nextIdx, 2, price),
-        #     self.ui.sale_table.Item(nextIdx, 3, salecnt),
-        #     self.ui.sale_table.Item(nextIdx, 4, marginRate))
-        # print(self.ui.sale_table.)
+        selectionIdxs = self.ui.sale_table.selectedIndexes()[0]
+        self.ui.le_sale_no.setText(self.ui.sale_table.item(selectionIdxs.row(), 0).text())
+        self.ui.le_sale_code.setText(self.ui.sale_table.item(selectionIdxs.row(), 1).text())
+        self.ui.le_sale_price.setText(self.ui.sale_table.item(selectionIdxs.row(), 2).text())
+        self.ui.le_sale_salecnt.setText(self.ui.sale_table.item(selectionIdxs.row(), 3).text())
+        self.ui.le_sale_marginRate.setText(self.ui.sale_table.item(selectionIdxs.row(), 4).text())
+
+        self.ui.btn_sale_update.setEnabled(True)
+        self.ui.btn_sale_add.setEnabled(False)
+        self.ui.btn_sale_delete.setEnabled(False)
+        self.ui.btn_sale_init.setEnabled(False)

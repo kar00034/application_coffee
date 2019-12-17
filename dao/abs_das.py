@@ -1,10 +1,11 @@
 import inspect
 from abc import ABCMeta, abstractmethod
 
-from PyQt5.QtWidgets import QAbstractItemView, QHeaderView
+from PyQt5.QtWidgets import QHeaderView, QAbstractItemView
 from mysql.connector import Error
 
 from db_connection.connection_pool import ConnectionPool
+
 
 def create_table(table=None, data=None):
     table.setHorizontalHeaderLabels(data)
@@ -55,6 +56,14 @@ class Dao(metaclass=ABCMeta):
     def iter_row(self, cursor, size=5):
         while True:
             rows = cursor.fetchmany(size)
+            if not rows:
+                break
+            for row in rows:
+                yield row
+
+    def iter_row_proc(self, cursor):
+        for result in cursor.stored_results():
+            rows = result.fetchall()
             if not rows:
                 break
             for row in rows:
