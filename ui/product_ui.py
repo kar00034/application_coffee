@@ -3,6 +3,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QMessageBox, QAction
 
 from dao.product_dao import ProductDao
+from ui.sale_detail_ui import Sale_Detail_form
+from ui.sale_ui import Sale_form
 from ui.table import create_table
 
 

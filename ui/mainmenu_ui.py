@@ -14,6 +14,7 @@ class mainmenu(QWidget):
         self.ui.btn_pro.clicked.connect(self.call_pro)
         self.ui.btn_sale.clicked.connect(self.call_sale)
         self.ui.btn_sale_d.clicked.connect(self.call_sale_d)
+        self.ui.btn_exit.clicked.connect(self.call_exit)
 
         self.ui.show()
 
@@ -25,3 +26,6 @@ class mainmenu(QWidget):
 
     def call_sale_d(self):
         self.sale_d = Sale_Detail_form()
+
+    def call_exit(self):
+        self.ui.close()

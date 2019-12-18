@@ -9,4 +9,5 @@ def create_table(table=None, data=None):
     table.setEditTriggers(QAbstractItemView.NoEditTriggers)
     # 균일 간격 재배치
     table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
     return table

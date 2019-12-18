@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>358</width>
+    <width>359</width>
     <height>335</height>
    </rect>
   </property>
@@ -43,28 +43,28 @@
      <item>
       <widget class="QPushButton" name="btn_insert">
        <property name="text">
-        <string>추가( &amp;a )</string>
+        <string>&amp;1. 추가</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btn_update">
        <property name="text">
-        <string>수정( &amp;u )</string>
+        <string>&amp;2. 수정</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btn_delete">
        <property name="text">
-        <string>삭제 ( &amp;d )</string>
+        <string>&amp;3. 삭제 </string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btn_init">
        <property name="text">
-        <string>초기화 ( &amp;i )</string>
+        <string>&amp;4. 초기화</string>
        </property>
       </widget>
      </item>

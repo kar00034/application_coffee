@@ -36,7 +36,7 @@
      <item>
       <widget class="QRadioButton" name="rb_margin">
        <property name="text">
-        <string>마진액순 ( &amp;1 )</string>
+        <string>&amp;1. 마진액순</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -46,7 +46,7 @@
      <item>
       <widget class="QRadioButton" name="rb_sale">
        <property name="text">
-        <string>판매액순 ( &amp;2 )</string>
+        <string>&amp;2. 판매액순</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>

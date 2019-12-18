@@ -42,23 +42,23 @@ class Sale_form(QWidget):
 
     def sale_create_item(self, no, code, price, salecnt, marginRate):
         item_no = QTableWidgetItem()
-        item_no.setTextAlignment(Qt.AlignCenter)
+        item_no.setTextAlignment(Qt.AlignHCenter)
         item_no.setData(Qt.DisplayRole, no)
 
         item_code = QTableWidgetItem()
-        item_code.setTextAlignment(Qt.AlignCenter)
+        item_code.setTextAlignment(Qt.AlignHCenter)
         item_code.setData(Qt.DisplayRole, code)
 
         item_price = QTableWidgetItem()
-        item_price.setTextAlignment(Qt.AlignCenter)
+        item_price.setTextAlignment(Qt.AlignRight)
         item_price.setData(Qt.DisplayRole, price)
 
         item_salecnt = QTableWidgetItem()
-        item_salecnt.setTextAlignment(Qt.AlignCenter)
+        item_salecnt.setTextAlignment(Qt.AlignRight)
         item_salecnt.setData(Qt.DisplayRole, salecnt)
 
         item_margin = QTableWidgetItem()
-        item_margin.setTextAlignment(Qt.AlignCenter)
+        item_margin.setTextAlignment(Qt.AlignRight)
         item_margin.setData(Qt.DisplayRole, marginRate)
         SaleDao().select_item()
 

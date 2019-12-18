@@ -19,21 +19,28 @@
      <item>
       <widget class="QPushButton" name="btn_pro">
        <property name="text">
-        <string>&amp;Product</string>
+        <string>&amp;1. product</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btn_sale">
        <property name="text">
-        <string>&amp;Sale</string>
+        <string>&amp;2. sale</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btn_sale_d">
        <property name="text">
-        <string>sale &amp;Detail</string>
+        <string>&amp;3. sale detail</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_exit">
+       <property name="text">
+        <string>&amp;0. exit</string>
        </property>
       </widget>
      </item>
