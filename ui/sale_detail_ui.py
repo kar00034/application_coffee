@@ -1,9 +1,8 @@
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem
-
-from dao.abs_das import create_table
 from dao.sale_detail_dao import SaleDetailDao
+from ui.table import create_table
 
 
 class Sale_Detail_form(QWidget):

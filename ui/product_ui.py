@@ -1,8 +1,10 @@
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QMessageBox, QAction
-from dao.abs_das import create_table
+
 from dao.product_dao import ProductDao
+from ui.table import create_table
+
 
 class Product_form(QWidget):
     def __init__(self):

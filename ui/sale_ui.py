@@ -1,9 +1,9 @@
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QAction
+from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QAction, QMessageBox
 
-from dao.abs_das import create_table
 from dao.sale_dao import SaleDao
+from ui.table import create_table
 
 
 class Sale_form(QWidget):
@@ -70,6 +70,7 @@ class Sale_form(QWidget):
         no = self.ui.sale_table.item(selectionIdxs.row(), 0).text()
         st.delete_item(no)
         self.sale_load_data(st.select_item())
+        QMessageBox.information(self, 'Delete', '확인', QMessageBox.Ok)
 
     def sale_add_item(self):
         st = SaleDao()
