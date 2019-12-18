@@ -18,6 +18,7 @@ class Sale_Detail_form(QWidget):
 
         self.ui.rb_margin.pressed.connect(self.margin_rank)
         self.ui.rb_sale.pressed.connect(self.sale_rank)
+        self.ui.btn_exit.clicked.connect(self.call_exit)
         self.ui.show()
 
     def saledetail_load_data(self, rank):
@@ -27,7 +28,7 @@ class Sale_Detail_form(QWidget):
         for idx, (
                 rank, code, name, price, salecnt, supply_price, addtax, sale_price, marginrate,
                 marginprice) in enumerate(res):
-            item_code, item_name, item_price, item_salecnt, item_supply_price, item_addtax, item_sale_price, item_marginrate, item_marginprice,item_rank = self.saledetail_create_item(
+            item_code, item_name, item_price, item_salecnt, item_supply_price, item_addtax, item_sale_price, item_marginrate, item_marginprice, item_rank = self.saledetail_create_item(
                 code, name, price, salecnt, supply_price, addtax, sale_price, marginrate, marginprice, rank)
             nextIdx = self.ui.sd_table.rowCount()
             self.ui.sd_table.insertRow(nextIdx)
@@ -58,7 +59,7 @@ class Sale_Detail_form(QWidget):
 
         item_price = QTableWidgetItem()
         item_price.setTextAlignment(Qt.AlignRight)
-        item_price.setData(Qt.DisplayRole, price)
+        item_price.setData(Qt.DisplayRole, format(int(price), ',d'))
 
         item_salecnt = QTableWidgetItem()
         item_salecnt.setTextAlignment(Qt.AlignRight)
@@ -66,23 +67,23 @@ class Sale_Detail_form(QWidget):
 
         item_supply_price = QTableWidgetItem()
         item_supply_price.setTextAlignment(Qt.AlignRight)
-        item_supply_price.setData(Qt.DisplayRole, supply_price)
+        item_supply_price.setData(Qt.DisplayRole, format(int(supply_price), ',d'))
 
         item_addtax = QTableWidgetItem()
         item_addtax.setTextAlignment(Qt.AlignRight)
-        item_addtax.setData(Qt.DisplayRole, addtax)
+        item_addtax.setData(Qt.DisplayRole, format(int(addtax), ',d'))
 
         item_sale_price = QTableWidgetItem()
         item_sale_price.setTextAlignment(Qt.AlignRight)
-        item_sale_price.setData(Qt.DisplayRole, sale_price)
+        item_sale_price.setData(Qt.DisplayRole, format(int(sale_price), ',d'))
 
         item_marginrate = QTableWidgetItem()
         item_marginrate.setTextAlignment(Qt.AlignRight)
-        item_marginrate.setData(Qt.DisplayRole, marginrate)
+        item_marginrate.setData(Qt.DisplayRole, str(marginrate) + '%')
 
         item_marginprice = QTableWidgetItem()
         item_marginprice.setTextAlignment(Qt.AlignRight)
-        item_marginprice.setData(Qt.DisplayRole, marginprice)
+        item_marginprice.setData(Qt.DisplayRole, format(int(marginprice), ',d'))
 
         return item_code, item_name, item_price, item_salecnt, item_supply_price, item_addtax, item_sale_price, item_marginrate, item_marginprice, item_rank
 
@@ -91,3 +92,6 @@ class Sale_Detail_form(QWidget):
 
     def sale_rank(self):
         self.saledetail_load_data(True)
+
+    def call_exit(self):
+        self.ui.close()

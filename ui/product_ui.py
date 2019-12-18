@@ -22,6 +22,7 @@ class Product_form(QWidget):
         self.ui.btn_update.clicked.connect(self.update_item)
         self.ui.btn_delete.clicked.connect(self.del_item)
         self.ui.btn_init.clicked.connect(self.init_item)
+        self.ui.btn_exit.clicked.connect(self.call_exit)
         self.ui.btn_update.setEnabled(False)
 
         # 마우스 우클릭시 메뉴
@@ -119,3 +120,7 @@ class Product_form(QWidget):
     def init_item(self):
         self.ui.le_code.clear()
         self.ui.le_name.clear()
+
+    def call_exit(self):
+        self.ui.close()
+

@@ -14,23 +14,6 @@
    <string>sale_detail</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
-    <widget class="QTableWidget" name="sd_table">
-     <property name="columnCount">
-      <number>10</number>
-     </property>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-    </widget>
-   </item>
    <item row="0" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -53,7 +36,44 @@
        </attribute>
       </widget>
      </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_exit">
+       <property name="text">
+        <string>&amp;0. exit</string>
+       </property>
+      </widget>
+     </item>
     </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QTableWidget" name="sd_table">
+     <property name="columnCount">
+      <number>10</number>
+     </property>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+    </widget>
    </item>
   </layout>
  </widget>

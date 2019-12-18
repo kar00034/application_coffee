@@ -21,6 +21,7 @@ class Sale_form(QWidget):
         self.ui.btn_sale_init.clicked.connect(self.init_item)
         self.ui.btn_sale_add.clicked.connect(self.sale_add_item)
         self.ui.btn_sale_update.clicked.connect(self.sale_update_item)
+        self.ui.btn_exit.clicked.connect(self.call_exit)
 
         # 마우스 우클릭시 메뉴
         self.set_context_menu(self.ui.sale_table)
@@ -51,7 +52,7 @@ class Sale_form(QWidget):
 
         item_price = QTableWidgetItem()
         item_price.setTextAlignment(Qt.AlignRight)
-        item_price.setData(Qt.DisplayRole, price)
+        item_price.setData(Qt.DisplayRole, format(int(price), ',d'))
 
         item_salecnt = QTableWidgetItem()
         item_salecnt.setTextAlignment(Qt.AlignRight)
@@ -59,7 +60,7 @@ class Sale_form(QWidget):
 
         item_margin = QTableWidgetItem()
         item_margin.setTextAlignment(Qt.AlignRight)
-        item_margin.setData(Qt.DisplayRole, marginRate)
+        item_margin.setData(Qt.DisplayRole, str(marginRate)+'%')
         SaleDao().select_item()
 
         return item_no, item_code, item_price, item_salecnt, item_margin
@@ -85,6 +86,7 @@ class Sale_form(QWidget):
 
         self.init_item()
         self.sale_load_data(st.select_item())
+
         self.ui.btn_sale_update.setEnabled(False)
         self.ui.btn_sale_add.setEnabled(True)
         self.ui.btn_sale_delete.setEnabled(True)
@@ -117,3 +119,6 @@ class Sale_form(QWidget):
         self.ui.btn_sale_add.setEnabled(False)
         self.ui.btn_sale_delete.setEnabled(False)
         self.ui.btn_sale_init.setEnabled(False)
+
+    def call_exit(self):
+        self.ui.close()

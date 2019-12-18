@@ -14,41 +14,6 @@
    <string>sale</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="btn_sale_add">
-       <property name="text">
-        <string>&amp;1. 추가</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_sale_update">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>&amp;2. 수정</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_sale_delete">
-       <property name="text">
-        <string>&amp;3. 삭제</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_sale_init">
-       <property name="text">
-        <string>&amp;4. 초기화</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
    <item row="0" column="0">
     <layout class="QFormLayout" name="formLayout">
      <item row="1" column="0">
@@ -117,6 +82,48 @@
        </property>
        <property name="clearButtonEnabled">
         <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btn_sale_add">
+       <property name="text">
+        <string>&amp;1. 추가</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_sale_update">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>&amp;2. 수정</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_sale_delete">
+       <property name="text">
+        <string>&amp;3. 삭제</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_sale_init">
+       <property name="text">
+        <string>&amp;4. 초기화</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_exit">
+       <property name="text">
+        <string>&amp;0. exit</string>
        </property>
       </widget>
      </item>
