@@ -27,8 +27,6 @@ class SaleDao(Dao):
         args = (code, price, saleCnt, marginRate, no)
         try:
             super().do_query(query=update_sql, kwargs=args)
-            print(update_sql)
-            print(args)
             return True
         except Error:
             return False

@@ -15,7 +15,6 @@ class mainmenu(QWidget):
         self.ui.btn_sale.clicked.connect(self.call_sale)
         self.ui.btn_sale_d.clicked.connect(self.call_sale_d)
         self.ui.btn_exit.clicked.connect(self.call_exit)
-
         self.ui.show()
 
     def call_pro(self):

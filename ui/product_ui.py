@@ -3,8 +3,6 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QMessageBox, QAction
 
 from dao.product_dao import ProductDao
-from ui.sale_detail_ui import Sale_Detail_form
-from ui.sale_ui import Sale_form
 from ui.table import create_table
 
 
@@ -92,6 +90,7 @@ class Product_form(QWidget):
         selectionIdxs = self.ui.pro_table.selectedIndexes()[0]
         returnIdxs1 = self.ui.pro_table.item(selectionIdxs.row(), 0).text()
         returnIdxs2 = self.ui.pro_table.item(selectionIdxs.row(), 1).text()
+
         self.ui.le_code.setText(returnIdxs1)
         self.ui.le_name.setText(returnIdxs2)
 

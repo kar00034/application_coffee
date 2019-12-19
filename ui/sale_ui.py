@@ -16,7 +16,7 @@ class Sale_form(QWidget):
         self.sale_load_data(res2)
 
         self.sale_table = create_table(table=self.ui.sale_table,
-                                       data=['no', 'code', 'price', 'salecnt', 'marginRate'])
+                                       data=['no', 'code', 'price', 'salecnt', 'marginRate(%)'])
         self.ui.btn_sale_delete.clicked.connect(self.sale_del_item)
         self.ui.btn_sale_init.clicked.connect(self.init_item)
         self.ui.btn_sale_add.clicked.connect(self.sale_add_item)
@@ -60,7 +60,7 @@ class Sale_form(QWidget):
 
         item_margin = QTableWidgetItem()
         item_margin.setTextAlignment(Qt.AlignRight)
-        item_margin.setData(Qt.DisplayRole, str(marginRate)+'%')
+        item_margin.setData(Qt.DisplayRole, marginRate)
         SaleDao().select_item()
 
         return item_no, item_code, item_price, item_salecnt, item_margin

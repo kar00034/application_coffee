@@ -1,6 +1,7 @@
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QTableWidgetItem
+
 from dao.sale_detail_dao import SaleDetailDao
 from ui.table import create_table
 
@@ -14,7 +15,7 @@ class Sale_Detail_form(QWidget):
         self.sd_table = create_table(table=self.ui.sd_table,
                                      data=['rank', 'code', 'name', 'price', 'salecnt', 'supply_price', 'addtax',
                                            'sale_price',
-                                           'marginrate', 'marginprice'])
+                                           'marginrate(%)', 'marginprice'])
 
         self.ui.rb_margin.pressed.connect(self.margin_rank)
         self.ui.rb_sale.pressed.connect(self.sale_rank)
@@ -79,7 +80,7 @@ class Sale_Detail_form(QWidget):
 
         item_marginrate = QTableWidgetItem()
         item_marginrate.setTextAlignment(Qt.AlignRight)
-        item_marginrate.setData(Qt.DisplayRole, str(marginrate) + '%')
+        item_marginrate.setData(Qt.DisplayRole, marginrate)
 
         item_marginprice = QTableWidgetItem()
         item_marginprice.setTextAlignment(Qt.AlignRight)
